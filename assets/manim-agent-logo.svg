@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="Manim agent logo">
+  <rect width="360" height="120" rx="18" fill="#111827"/>
+  <circle cx="56" cy="48" r="26" fill="#58C4DD"/>
+  <rect x="75" y="50" width="42" height="42" rx="5" fill="#F59E0B"/>
+  <path d="M30 91 C56 48 93 42 124 24" fill="none" stroke="#F8FAFC" stroke-width="7" stroke-linecap="round"/>
+  <text x="150" y="57" fill="#F8FAFC" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="31" font-weight="700">Manim</text>
+  <text x="150" y="86" fill="#9CA3AF" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="18">agent visual workbench</text>
+</svg>

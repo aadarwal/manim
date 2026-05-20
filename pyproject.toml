@@ -1,0 +1,26 @@
+[project]
+name = "aadarwal-manim-agent-plugin"
+version = "0.1.0"
+description = "Agent-ready Manim plugin, MCP server, examples, and workflow kit."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "manim>=0.20.1,<0.21",
+    "mcp>=1.27.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint.per-file-ignores]
+"examples/scenes/*.py" = ["F403", "F405"]
+"templates/basic_project/scenes/*.py" = ["F403", "F405"]

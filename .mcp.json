@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "manim-renderer": {
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "mcp/manim_server.py"
+      ],
+      "env": {
+        "MANIM_OUTPUT_DIR": ".manim-media"
+      }
+    }
+  }
+}

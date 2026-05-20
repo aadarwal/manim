@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Manim agent icon">
+  <rect width="64" height="64" rx="12" fill="#111827"/>
+  <circle cx="24" cy="24" r="13" fill="#58C4DD" fill-opacity="0.92"/>
+  <rect x="27" y="27" width="23" height="23" rx="3" fill="#F59E0B" fill-opacity="0.92"/>
+  <path d="M14 47 C22 33 33 31 50 15" fill="none" stroke="#F8FAFC" stroke-width="4" stroke-linecap="round"/>
+</svg>

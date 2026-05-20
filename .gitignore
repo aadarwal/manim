@@ -1,0 +1,11 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+media/
+.manim-media/
+.manim-sources/
+examples/media/
+templates/**/media/

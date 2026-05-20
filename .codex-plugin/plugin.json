@@ -1,0 +1,45 @@
+{
+  "name": "manim",
+  "version": "0.1.0",
+  "description": "Agent-ready Manim workbench for creating, rendering, and iterating on mathematical visualizations.",
+  "author": {
+    "name": "Aadarwal",
+    "url": "https://github.com/aadarwal"
+  },
+  "homepage": "https://github.com/aadarwal/Manim",
+  "repository": "https://github.com/aadarwal/Manim",
+  "license": "MIT",
+  "keywords": [
+    "manim",
+    "math",
+    "animation",
+    "visualization",
+    "mcp",
+    "codex",
+    "3blue1brown"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Manim",
+    "shortDescription": "Create and render Manim visualizations",
+    "longDescription": "A complete agent workbench for Manim Community Edition: authoring guidance, MCP rendering, helper scripts, original examples, templates, and source survey notes for 3Blue1Brown-style mathematical visuals.",
+    "developerName": "Aadarwal",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://docs.manim.community/",
+    "defaultPrompt": [
+      "Create a Manim animation and render a draft.",
+      "Turn this proof into a Manim scene.",
+      "Build a 3Blue1Brown-style visual explainer."
+    ],
+    "brandColor": "#58C4DD",
+    "composerIcon": "./assets/manim-agent-icon.svg",
+    "logo": "./assets/manim-agent-logo.svg",
+    "screenshots": []
+  }
+}
