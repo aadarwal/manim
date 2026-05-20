@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=texlive_env.sh
+source "$script_dir/texlive_env.sh"
+
 missing=0
 
 check_cmd() {
@@ -31,6 +35,8 @@ check_pkg pangocairo
 
 if command -v latex >/dev/null 2>&1 && command -v dvisvgm >/dev/null 2>&1; then
   printf 'ok: TeX and dvisvgm available\n'
+  printf 'ok: latex -> %s\n' "$(command -v latex)"
+  printf 'ok: dvisvgm -> %s\n' "$(command -v dvisvgm)"
 else
   printf 'note: TeX/dvisvgm not fully available; use Text or Docker for TeX-heavy scenes\n'
 fi

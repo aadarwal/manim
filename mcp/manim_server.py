@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = Path(os.getenv("MANIM_OUTPUT_DIR", ROOT / ".manim-media")).resolve()
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 TIMEOUT_SECONDS = int(os.getenv("MANIM_TIMEOUT_SECONDS", "180"))
+DEFAULT_TINYTEX_BIN = Path("/Volumes/aadarwal_vx/tools/TinyTeX/bin/universal-darwin")
+LEGACY_EXTERNAL_TEXLIVE_BIN = Path("/Volumes/aadarwal_vx/tools/texlive/2026/bin/universal-darwin")
 
 
 def _manim_command() -> list[str]:
@@ -42,6 +44,15 @@ def _quality_flag(quality: str) -> str:
     if quality in {"-ql", "-qm", "-qh", "-qp", "-qk"}:
         return quality
     raise ValueError(f"Unsupported quality: {quality}")
+
+
+def _texlive_bin() -> Path:
+    configured = os.getenv("MANIM_TEXLIVE_BIN")
+    if configured:
+        return Path(configured).expanduser()
+    if DEFAULT_TINYTEX_BIN.is_dir():
+        return DEFAULT_TINYTEX_BIN
+    return LEGACY_EXTERNAL_TEXLIVE_BIN
 
 
 def _artifacts(directory: Path) -> list[Path]:
@@ -97,6 +108,11 @@ def _render(
     if scene_name:
         command.append(scene_name)
 
+    env = os.environ.copy()
+    texlive_bin = _texlive_bin()
+    if texlive_bin.is_dir():
+        env["PATH"] = f"{texlive_bin}{os.pathsep}{env.get('PATH', '')}"
+
     try:
         result = subprocess.run(
             command,
@@ -105,6 +121,7 @@ def _render(
             text=True,
             timeout=TIMEOUT_SECONDS,
             check=False,
+            env=env,
         )
     except subprocess.TimeoutExpired as exc:
         stdout = exc.stdout or ""

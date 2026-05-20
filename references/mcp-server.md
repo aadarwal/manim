@@ -24,6 +24,15 @@ MANIM_EXECUTABLE=/path/to/manim ./scripts/run_mcp_server.sh
 
 If `MANIM_EXECUTABLE` is not set, the server uses `uv run manim`.
 
+The server also auto-detects external-drive TinyTeX at:
+
+```text
+/Volumes/aadarwal_vx/tools/TinyTeX/bin/universal-darwin
+```
+
+When present, that path is prepended to the render subprocess `PATH`.
+Set `MANIM_TEXLIVE_BIN` to override the TeX binary directory.
+
 ## Claude Desktop-Style Config
 
 Adjust the absolute paths:

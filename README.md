@@ -28,6 +28,8 @@ Check local prerequisites:
 ./scripts/check_environment.sh
 ```
 
+If TinyTeX is installed at `/Volumes/aadarwal_vx/tools/TinyTeX`, the scripts automatically add its `bin/universal-darwin` directory to `PATH` so Manim can render `Tex` and `MathTex`. Set `MANIM_TEXLIVE_BIN` to override that binary directory.
+
 Render an example still:
 
 ```bash

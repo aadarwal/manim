@@ -34,6 +34,8 @@ quality_flag() {
 }
 
 plugin_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck source=texlive_env.sh
+source "$plugin_root/scripts/texlive_env.sh"
 project_dir=""
 scene_file=""
 scene_name=""
